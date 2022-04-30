@@ -1,0 +1,49 @@
+version: '3.9'
+services:
+
+  my-postgres:
+    image: postgres
+    container_name:  my-postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=secret
+    networks:
+      my-net:
+        ipv4_address: 122.22.0.2
+
+  backend:
+    image: danieldi:backend
+    build: ./praxis-gildedrose
+    container_name: backend
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - DB_HOST=my-postgres
+      - DB_SERVER=my-postgres
+    ports:
+      - 8080:8080
+    links:
+      - my-postgres
+    networks:
+      my-net:
+        ipv4_address: 122.22.0.22
+    
+  front-end:
+    image: danieldi:front
+    build: ./praxis-FE
+    container_name: front-end
+    ports:
+      - 4200:4200
+    links:
+      - backend
+    networks:
+      my-net:
+        ipv4_address: 122.22.0.32
+
+networks:
+  my-net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 122.22.0.0/16
+         gateway: 122.22.0.1
