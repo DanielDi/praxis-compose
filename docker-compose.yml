@@ -21,7 +21,7 @@ services:
       - DB_HOST=my-postgres
       - DB_SERVER=my-postgres
     ports:
-      - 8080:8080
+      - 8090:8080
     links:
       - my-postgres
     networks:
