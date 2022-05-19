@@ -85,55 +85,8 @@ variable "eip_tags" {
 }
 
 ##############################################
-# RDS variables
+# Subnet variables
 ##############################################
-
-variable "rds_identifier" {
-  type = string
-  description = "RDS identifier"
-} 
-variable "rds_allocated_storage" {
-  type = string
-  description = "RDS storage (GB)"
-} 
-variable "rds_engine" {
-  type = string
-  description = "RDS engine"
-} 
-variable "rds_engine_version" {
-  type = string
-  description = "RDS database engine version"
-} 
-variable "rds_instance_class" {
-  type = string
-  description = "RDS instance class"
-} 
-variable "rds_name" {
-  type = string
-  description = "Database name"
-} 
-variable "rds_username" {
-  type = string
-  description = "RDS username"
-} 
-variable "rds_password" {
-  type = string
-  description = "RDS user password"
-} 
-variable "rds_tags" {
-  type = map(string)
-  description = "RDS tags"
-} 
-variable "rds_port" {
-  type = number
-  description = "Database connection port"
-} 
-variable "rds_skip_final_snapshot" {
-  type = bool
-  description = "Do you want to avoid the snapshot creation? (true->yes, false->no)"
-} 
-
-###
 
 variable "db_subnet_name" {
   type        = string
@@ -149,3 +102,61 @@ variable "db_subnet_tags" {
   type        = map(string)
   description = "Subnet tags"
 }
+
+##############################################
+# RDS variables
+##############################################
+
+variable "rds_identifier" {
+  type = string
+  description = "RDS identifier"
+}
+
+variable "rds_instance_class" {
+  type = string
+  description = "RDS instance class"
+} 
+
+variable "rds_allocated_storage" {
+  type = string
+  description = "RDS storage (GB)"
+} 
+
+variable "rds_engine" {
+  type = string
+  description = "RDS engine"
+} 
+
+variable "rds_engine_version" {
+  type = string
+  description = "RDS database engine version"
+} 
+
+variable "rds_username" {
+  type = string
+  description = "RDS username"
+} 
+
+variable "rds_password" {
+  type = string
+  description = "RDS user password"
+} 
+
+variable "rds_skip_final_snapshot" {
+  type = bool
+  description = "Do you want to avoid the snapshot creation? (true->yes, false->no)"
+} 
+
+variable "rds_tags" {
+  type = map(string)
+  description = "RDS tags"
+} 
+variable "rds_port" {
+  type = number
+  description = "Database connection port"
+} 
+
+variable "rds_name" {
+  type = string
+  description = "Database name"
+} 

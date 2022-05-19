@@ -19,19 +19,21 @@ module "deploy_ec2" {
   eip_vpc = true
   eip_tags = { Name = "group7_eip" }
 
-  db_subnet_name = "group7-2-subnet_group"
-  db_subnet_tags = { Name = "group7-subnet_group" }
-  db_subnet_ids  = ["subnet-04e972f3a706c00e8", "subnet-0ee2351fb4338f1c7"]
-  
-  rds_identifier          = "group7-2-rds"
+  rds_identifier          = "group7-rds"
+  rds_instance_class      = "db.t3.micro"
   rds_allocated_storage   = 20
   rds_engine              = "postgres"
   rds_engine_version      = "14.2"
-  rds_instance_class      = "db.t3.micro"
-  rds_name                = "group7rds"
   rds_username            = "postgres"
-  rds_password            = "secretteam7"
+  rds_password            = "secretteam7"  
   rds_tags                = { Name = "group7-rds" }
-  rds_port                = 5432
   rds_skip_final_snapshot = true
+  rds_port                = 5432
+  rds_name                = "group7rds"
+
+  db_subnet_name = "group7-subnet_group"
+  db_subnet_tags = { Name = "group7-subnet_group" }
+  db_subnet_ids  = ["subnet-04e972f3a706c00e8", "subnet-0ee2351fb4338f1c7"]
+  
+
 }
