@@ -88,17 +88,17 @@ variable "eip_tags" {
 # Subnet variables
 ##############################################
 
-variable "db_subnet_name" {
+variable "subnet_name" {
   type        = string
   description = "Subnet name"
 }
 
-variable "db_subnet_ids" {
+variable "subnet_ids" {
   type        = set(string)
   description = "Subnet id"
 }
 
-variable "db_subnet_tags" {
+variable "subnet_tags" {
   type        = map(string)
   description = "Subnet tags"
 }
@@ -160,3 +160,8 @@ variable "rds_name" {
   type = string
   description = "Database name"
 } 
+
+variable "rds_public_access" {
+  type        = bool
+  description = "Do you want to enable the database from public domains? (true->yes, false->no)"
+}

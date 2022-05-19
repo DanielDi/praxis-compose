@@ -32,7 +32,7 @@ resource "aws_security_group" "group7-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-    ingress {
+  ingress {
     from_port   = 8080
     protocol    = "TCP"
     to_port     = 8080

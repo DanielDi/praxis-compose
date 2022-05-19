@@ -12,7 +12,7 @@ module "deploy_ec2" {
   public_ip = true
 
   sg_name        = "group7-sg"
-  sg_description = "Allow http over port 80 and ssh over port 22"
+  sg_description = "Allow http over port 8080, 4200 and ssh over port 22"
   vpc_id         = "vpc-031420f7c99b1a0bd"
   sg_tags        = { Name = "group7-sg" }
 
@@ -30,10 +30,10 @@ module "deploy_ec2" {
   rds_skip_final_snapshot = true
   rds_port                = 5432
   rds_name                = "group7rds"
+  rds_public_access       = true
 
-  db_subnet_name = "group7-subnet_group"
-  db_subnet_tags = { Name = "group7-subnet_group" }
-  db_subnet_ids  = ["subnet-04e972f3a706c00e8", "subnet-0ee2351fb4338f1c7"]
-  
+  subnet_name = "group7-subnet_group"
+  subnet_tags = { Name = "group7-subnet_group" }
+  subnet_ids  = ["subnet-04e972f3a706c00e8", "subnet-0ee2351fb4338f1c7"]
 
 }

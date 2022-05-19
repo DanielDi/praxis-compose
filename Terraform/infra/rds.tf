@@ -11,10 +11,11 @@ resource "aws_db_instance" "rds_db_instance" {
   tags                 = var.rds_tags
   port                 = var.rds_port
   name                 = var.rds_name
+  publicly_accessible  = var.rds_public_access
 }
 
 resource "aws_db_subnet_group" "subnet" {
-  name       = var.db_subnet_name
-  subnet_ids = var.db_subnet_ids
-  tags       = var.db_subnet_tags
+  name       = var.subnet_name
+  subnet_ids = var.subnet_ids
+  tags       = var.subnet_tags
 }
