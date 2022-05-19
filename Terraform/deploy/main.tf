@@ -12,11 +12,11 @@ module "deploy_ec2" {
   public_ip = true
 
   sg_name        = "group7-sg"
-  sg_description = "Allow http over port 8080, 4200 and ssh over port 22"
   vpc_id         = "vpc-031420f7c99b1a0bd"
   sg_tags        = { Name = "group7-sg" }
+  sg_description = "Allow http over port 8080, 4200 and ssh over port 22"
 
-  eip_vpc = true
+  eip_vpc  = true
   eip_tags = { Name = "group7_eip" }
 
   rds_identifier          = "group7-rds"
@@ -25,7 +25,7 @@ module "deploy_ec2" {
   rds_engine              = "postgres"
   rds_engine_version      = "14.2"
   rds_username            = "postgres"
-  rds_password            = "secretteam7"  
+  rds_password            = "secretteam7"
   rds_tags                = { Name = "group7-rds" }
   rds_skip_final_snapshot = true
   rds_port                = 5432

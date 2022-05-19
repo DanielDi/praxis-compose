@@ -108,58 +108,58 @@ variable "subnet_tags" {
 ##############################################
 
 variable "rds_identifier" {
-  type = string
+  type        = string
   description = "RDS identifier"
 }
 
 variable "rds_instance_class" {
-  type = string
+  type        = string
   description = "RDS instance class"
-} 
+}
 
 variable "rds_allocated_storage" {
-  type = string
+  type        = string
   description = "RDS storage (GB)"
-} 
+}
 
 variable "rds_engine" {
-  type = string
+  type        = string
   description = "RDS engine"
-} 
+}
 
 variable "rds_engine_version" {
-  type = string
+  type        = string
   description = "RDS database engine version"
-} 
+}
 
 variable "rds_username" {
-  type = string
+  type        = string
   description = "RDS username"
-} 
+}
 
 variable "rds_password" {
-  type = string
+  type        = string
   description = "RDS user password"
-} 
+}
 
 variable "rds_skip_final_snapshot" {
-  type = bool
+  type        = bool
   description = "Do you want to avoid the snapshot creation? (true->yes, false->no)"
-} 
+}
 
 variable "rds_tags" {
-  type = map(string)
+  type        = map(string)
   description = "RDS tags"
-} 
+}
 variable "rds_port" {
-  type = number
+  type        = number
   description = "Database connection port"
-} 
+}
 
 variable "rds_name" {
-  type = string
+  type        = string
   description = "Database name"
-} 
+}
 
 variable "rds_public_access" {
   type        = bool
