@@ -12,7 +12,7 @@ resource "aws_db_instance" "rds_db_instance" {
   port                   = var.rds_port
   name                   = var.rds_name
   publicly_accessible    = var.rds_public_access
-  vpc_security_group_ids = [aws_security_group.group7-sg.id]
+  vpc_security_group_ids = [aws_security_group.group7-rds-sg.id]
 }
 
 resource "aws_db_subnet_group" "subnet" {

@@ -1,4 +1,3 @@
-
 module "deploy_ec2" {
   source        = "../infra"
   aws_region    = "us-east-1"
@@ -15,6 +14,9 @@ module "deploy_ec2" {
   vpc_id         = "vpc-031420f7c99b1a0bd"
   sg_tags        = { Name = "group7-sg" }
   sg_description = "Allow http over port 8080, 4200 and ssh over port 22"
+
+  sg_rds_name = "group7-rds-sg"
+  sg_rds_description = "Allow http over port 8080, 4200 and ssh over port 22"
 
   eip_vpc  = true
   eip_tags = { Name = "group7_eip" }

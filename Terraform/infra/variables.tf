@@ -70,6 +70,17 @@ variable "sg_tags" {
   type        = map(string)
 }
 
+###
+variable "sg_rds_name" {
+  type        = string
+  description = "Security group name E7"
+}
+
+variable "sg_rds_description" {
+  type        = string
+  description = "Security group description"
+}
+
 ##############################################
 # Elastic IP variables
 ##############################################
