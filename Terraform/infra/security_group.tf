@@ -32,13 +32,6 @@ resource "aws_security_group" "group7-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # ingress {
-  #   from_port   = 80
-  #   protocol    = "TCP"
-  #   to_port     = 80
-  #   cidr_blocks = ["0.0.0.0/0"]
-  # }
-
   ingress {
     from_port   = 4200
     protocol    = "TCP"
@@ -61,6 +54,27 @@ resource "aws_security_group" "group7-rds-sg" {
   name        = var.sg_rds_name
   description = var.sg_rds_description
   vpc_id      = var.vpc_id
+
+  ingress {
+    from_port   = 8090
+    protocol    = "TCP"
+    to_port     = 8090
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 8080
+    protocol    = "TCP"
+    to_port     = 8080
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 4200
+    protocol    = "TCP"
+    to_port     = 4200
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   ingress {
     from_port   = 5432
